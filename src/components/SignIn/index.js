@@ -27,7 +27,19 @@ function Copyright(props) {
   );
 }
 
-const theme = createTheme();
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#fff',
+    },
+    secondary:{
+      main:'#000'
+    },
+    success:{
+      main:'#808080'
+    }
+  },
+});
 
 export default function SignIn() {
   const handleSubmit = (event) => {
@@ -69,6 +81,7 @@ export default function SignIn() {
               name="email"
               autoComplete="email"
               autoFocus
+              color='secondary'
             />
             <TextField
               margin="normal"
@@ -79,6 +92,7 @@ export default function SignIn() {
               type="password"
               id="password"
               autoComplete="current-password"
+              color='secondary'
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
@@ -88,7 +102,7 @@ export default function SignIn() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2,":hover":{color:"white",backgroundColor:"black"} }}
             >
               Sign In
             </Button>

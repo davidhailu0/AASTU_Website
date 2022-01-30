@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -6,69 +6,24 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import aastulogo from '../../images/AASTU_LOGO.png';
-import Drawer from '@mui/material/Drawer';
 import InputBase from '@mui/material/InputBase';
-import {Link} from 'react-router-dom';
-import List from '@mui/material/List';
 import SearchIcon from '@mui/icons-material/Search';
-import {styled, alpha,createTheme,ThemeProvider} from '@mui/material/styles';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { styled, alpha,ThemeProvider,createTheme } from '@mui/material/styles';
+import {Link} from 'react-router-dom';
+import Drawer from '@mui/material/Drawer';
+import aastuLogo from '../../images/AASTU_LOGO.png'
+import ScrollSpy from 'react-scrollspy-navigation';
+import $ from 'jquery';
 import './AppBar.css';
 
-const pages = ['About AASTU',"Admissions","Academics","University Life","Research"]
-const ResponsiveAppBar = (props) => {
-  const [state, setstate] = useState(false);
-  const toggleDrawer = (open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-      return;
-    }
+const pages = ['About_AASTU','Academics','Admissions','Research','University_Life'];
 
-    setstate(open);
-  };
-  const list = () => (
-    <Box
-      sx={{ width: 250 }}
-      role="presentation"
-    >
-      <List>
-        {pages.map((text) => (
-           <Accordion key={text}>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography color={'GrayText'}>{text}</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography color={'darkgray'}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-        ))}
-      </List>
-    </Box>
-  );
-  const customTheme = createTheme({
-    palette:{
-      secondary:{
-        main:'#ffffff'
-      }
-    }
-  });
-  const Search = styled('div')(({ theme }) => ({
+const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
+  backgroundColor: alpha(theme.palette.common.black, 0.15),
   '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
+    backgroundColor: alpha(theme.palette.common.black, 0.25),
   },
   marginLeft: 0,
   width: '100%',
@@ -104,59 +59,121 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#fff',
+    },
+    secondary:{
+      main:'#000'
+    },
+    success:{
+      main:'#808080'
+    }
+  },
+});
+
+
+const ResponsiveAppBar = () => {
+    const[drawer,setDrawer] = React.useState(false);
+    console.log(typeof(aastuLogo));
+    const toggleDrawer = (open) => (event) => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+
+    setDrawer(open);
+  };
+
+  const list = () => (
+    <Box
+      sx={{ width: 250 }}
+      role="presentation"
+      onClick={toggleDrawer(false)}
+      onKeyDown={toggleDrawer(false)}
+    >
+      <Box sx={{display:'grid',justifyContent:'space-around',rowGap:"1rem"}}>
+        {pages.map((text, index) => (
+          <Button key={index} color='secondary' onClick={()=>{
+            $('html, body').animate({
+          scrollTop: $(`section[id="${text}"]`).offset().top - 50
+     },1000);
+      $(".news").removeClass("animate__animated");
+      $(".event").removeClass("animate__animated");
+          }}>
+            {text}
+          </Button>
+        ))}
+      </Box>
+    </Box>
+  );
+
+
   return (
-    <ThemeProvider theme={customTheme} >
+    <ThemeProvider theme={theme}>
     <AppBar position="fixed">
-      <Container maxWidth="xl" >
+      <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 0 }}>
-            <img src={aastulogo} alt='logo' height={'70'}/>
-         </Box>
-         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }} paddingTop={"5px"} className='btnContainer'>
+          <Box
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ mr: 2}}
+          >
+            <img src={aastuLogo} alt='aastu_logo'/>
+          </Box>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            <ScrollSpy>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={()=>{
-
+                  $('html, body').animate({
+          scrollTop: $(`section[id="${page}"]`).offset().top - 50
+     },1000);
+      $(".news").removeClass("animate__animated");
+      $(".event").removeClass("animate__animated");
                 }}
                 sx={{ my: 2, color: 'black', display: 'block' }}
               >
-                {page}
+                {page.replace('_',' ')}
               </Button>
-
             ))}
+            </ScrollSpy>
           </Box>
           <Box sx={{display:{xs:'none',md:'flex'}}}>
-                <Search>
+            <Search color='success'>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
+              color='primary'
             />
           </Search>
-          <Link to={'/login'} className={'link'} sx={{color:'white'}}>Login</Link>
+          <Link to='/signIn' className='loginButton'>Login</Link>
           </Box>
           <Box sx={{flexGrow:1,display:{xs:'flex',md:'none'}}}></Box>
-          <Box sx={{display:{xs:'flex',md:'none'}}}>
-              <IconButton
+          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={toggleDrawer(true)}
-              color='secondary'
+              color="inherit"
             >
               <MenuIcon />
             </IconButton>
-            <Drawer
-            anchor={'right'}
-            open={state}
+                      <Drawer
+            anchor='right'
+            open={drawer}
             onClose={toggleDrawer(false)}
           >
             {list()}
           </Drawer>
+
           </Box>
         </Toolbar>
       </Container>

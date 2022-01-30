@@ -1,18 +1,4 @@
-a {
-  display: block;
-  text-decoration: none;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-weight: 500;
-  font-size: 0.875rem;
-  line-height: 1.75;
-  margin-top: 16px;
-  margin-bottom: 16px;
-  min-width: 64px;
-  padding: 6px 8px;
-  border-radius: 4px;
-  letter-spacing: 0.02857em;
-}
-.appbar_links {
+/* .appbar_links {
   color: white;
   text-transform: uppercase;
   text-align: center;
@@ -26,4 +12,22 @@ a {
   color: black;
   margin-top: 5px;
   margin-bottom: 5px;
+} */
+.animate__animated.animate__bounceInUp {
+  --animate-duration: 2s;
+}
+.loginButton {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+  min-width: 64px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  vertical-align: middle;
+  text-decoration: none;
+  color: black;
+  margin-top: 3px;
 }
