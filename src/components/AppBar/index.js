@@ -16,7 +16,7 @@ import ScrollSpy from 'react-scrollspy-navigation';
 import $ from 'jquery';
 import './AppBar.css';
 
-const pages = ['About_AASTU','Academics','Admissions','Research','University_Life'];
+const pages = ['About_AASTU','Academics','University_Life','Research','Contact Us'];
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -119,6 +119,11 @@ const ResponsiveAppBar = () => {
             noWrap
             component="div"
             sx={{ mr: 2}}
+            onClick={()=>{
+              $('html, body').animate({
+          scrollTop: $(`div[id="home"]`).offset().top - 50
+     },1000);
+            }}
           >
             <img src={aastuLogo} alt='aastu_logo'/>
           </Box>

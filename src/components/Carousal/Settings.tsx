@@ -25,7 +25,7 @@ export interface SettingsT {
 export const DefaultSettingsT: SettingsT = {
     autoPlay: true,
     animation: "fade",
-    indicators: true,
+    indicators: false,
     duration: 500,
     navButtonsAlwaysVisible: false,
     navButtonsAlwaysInvisible: false,
