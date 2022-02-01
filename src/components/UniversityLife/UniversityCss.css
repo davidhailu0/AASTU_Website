@@ -1,0 +1,29 @@
+.layer{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    transition: 0.5s;
+}
+.layer:hover{
+    background: rgba(105, 105, 252, 0.7);
+}
+.layer h3{
+    width: 100%;
+    font-weight:500;
+    color:#fff;
+    font-size:26px;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    position: absolute;
+    opacity:0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: 0.5s;
+}
+.layer:hover h3{
+    bottom:49%;
+    opacity: 1;
+}

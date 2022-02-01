@@ -1,0 +1,20 @@
+.Contact_Us{
+    height:80vh;
+    padding:2rem 1rem;
+    background: white;
+    margin-bottom: 300px;
+}
+.form-container input,
+.form-container textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom: 17px;
+    outline: none;
+    border:1px solid #ccc;
+}
+@media (max-width:900px) {
+    .Contact_Us{
+        height: 150vh;
+        margin-bottom: 500px;
+    }
+}

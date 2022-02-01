@@ -6,6 +6,7 @@ import AboutAASTU from './components/AboutAASTU';
 import Academics from './components/Academics';
 import Research from './components/Research';
 import UniversityLife from './components/UniversityLife';
+import ContactUs from './components/ContactUs';
 import SignIn from './components/SignIn';
 import Footer from './components/Footer';
 import 'animate.css';
@@ -15,7 +16,7 @@ export default function App(){
     return (<Router>
         <AppBar/>
         <Routes>
-            <Route exact path='/' element={<><Carousel/><NewsComponent/><AboutAASTU/><Academics/><UniversityLife/><Research/></>}/>
+            <Route exact path='/' element={<><Carousel/><NewsComponent/><AboutAASTU/><Academics/><UniversityLife/><Research/><ContactUs/></>}/>
         <Route path='/signin' element={<SignIn/>}/>
         </Routes>
         <Footer/>
