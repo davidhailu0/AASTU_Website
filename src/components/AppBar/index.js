@@ -16,7 +16,7 @@ import ScrollSpy from 'react-scrollspy-navigation';
 import $ from 'jquery';
 import './AppBar.css';
 
-const pages = ['About_AASTU','Academics','University_Life','Research','Contact Us'];
+const pages = ['About_AASTU','Academics','University_Life','Research','Contact_Us'];
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -98,8 +98,7 @@ const ResponsiveAppBar = () => {
             $('html, body').animate({
           scrollTop: $(`section[id="${text}"]`).offset().top - 50
      },1000);
-      $(".news").removeClass("animate__animated");
-      $(".event").removeClass("animate__animated");
+      $(".animate__animated").removeClass("animate__animated");
           }}>
             {text}
           </Button>
@@ -136,8 +135,7 @@ const ResponsiveAppBar = () => {
                   $('html, body').animate({
           scrollTop: $(`section[id="${page}"]`).offset().top - 50
      },1000);
-      $(".news").removeClass("animate__animated");
-      $(".event").removeClass("animate__animated");
+      $(".animate__animated").removeClass("animate__animated");
                 }}
                 sx={{ my: 2, color: 'black', display: 'block' }}
               >

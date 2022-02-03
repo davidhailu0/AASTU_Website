@@ -2,7 +2,7 @@ import React from 'react';
 import Carousel from 'react-material-ui-carousel';
 import undergraduate from '../../images/background.jpg';
 import robot from '../../images/robot.jpg';
-import culture from '../../images/culture.png';
+import culture from '../../images/color.png';
 import './Carousal.scss';
 
 import {
@@ -15,7 +15,7 @@ import {
 
 const Example = () => {
     return (
-        <div style={{ marginTop: "74px", color: "#000",paddingLeft:"20px",paddingRight:"20px",backgroundColor:"#fff"}} id="home">
+        <div style={{ marginTop: "74px",color: "#000",paddingLeft:"20px",paddingRight:"20px",backgroundColor:"#fff"}} id="home">
             <br/>
             <Carousel
                 className="Example"
