@@ -1,5 +1,5 @@
 .Contact_Us{
-    height:83vh;
+    height: 83vh;
     padding:2rem 1rem;
     background: white;
     margin-bottom: 300px;
@@ -13,7 +13,7 @@
     border:1px solid #ccc;
 }
 @media (max-width:900px) {
-    .Contact_Us{
+    .Contact_Us {
         height: 150vh;
         margin-bottom: 500px;
     }

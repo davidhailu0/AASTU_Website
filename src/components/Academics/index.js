@@ -2,13 +2,19 @@ import { Typography } from '@mui/material';
 import Box from '@mui/material/Box'
 import React from 'react';
 import {Waypoint} from 'react-waypoint';
+import Typical from 'react-typical';
 import $ from 'jquery';
 import './academics.css';
 
 export default function Academics(){
 
     return (<section id='Academics'><Box className='route' sx={{background:'black',paddingLeft:"30px",py:'2rem'}}>
-        <Typography variant='h3' sx={{paddingLeft:"15px",mt:'2.5rem',color:'white',mb:'2rem',textAlign:'center',fontWeight:'bold'}}>Courses We Offer</Typography>
+
+        <Typical
+        steps={['Courses We Offer are','There are also other courses too']}
+        loop={Infinity}
+        wrapper="h3"
+      />
         <Typography sx={{textAlign:'center',fontWeight:'bold',mb:'2rem',}}>We have one of the most diverse courses in Ethiopia!</Typography>
         <Box sx={{display:{xs:'grid',md:'flex'},justifyContent:'space-between',rowGap:'1.5rem',px:'2rem'}}>
             <Box sx={{border:'2px solid white',px:'1rem',height:'17rem',mr:'0.5rem'}} className='degree_card animate__animated animate__delay-1s'>

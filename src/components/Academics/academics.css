@@ -1,5 +1,16 @@
-.degree_card,
-.master_card,
-.post_card {
-    animation-duration: 5s;
+#Academics h3{
+    margin: 0;
+    font-family: "Roboto",
+    "Helvetica",
+    "Arial",
+    sans-serif;
+    font-size: 3rem;
+    line-height: 1.167;
+    letter-spacing: 0em;
+    color: white;
+    padding-left: 15px;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 700;
 }

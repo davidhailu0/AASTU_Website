@@ -1,0 +1,10 @@
+.our_partners {
+    height: 83vh;
+    padding:2rem 1rem;
+    background: #F2F2F2;
+}
+@media(max-width:900px){
+    .our_partners{
+        height: 150vh;
+    }
+}

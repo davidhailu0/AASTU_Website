@@ -16,7 +16,7 @@ import ScrollSpy from 'react-scrollspy-navigation';
 import $ from 'jquery';
 import './AppBar.css';
 
-const pages = ['About_AASTU','Academics','University_Life','Research','Contact_Us'];
+const pages = ['About_AASTU','Academics','University_Life','Research','Our_Partners','Contact_Us'];
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -100,7 +100,7 @@ const ResponsiveAppBar = () => {
      },1000);
       $(".animate__animated").removeClass("animate__animated");
           }}>
-            {text}
+            {text.replace('_',' ')}
           </Button>
         ))}
       </Box>

@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CountUp from 'react-countup';
 import { Waypoint } from 'react-waypoint';
 import aboutUs from '../../images/about.jpg';
+import Typical from 'react-typical';
 import $ from 'jquery';
 import React from 'react';
 import './aboutAASTU.css';
@@ -12,7 +13,12 @@ import './aboutAASTU.css';
 export default function AboutUs(){
 
     return (<section id='About_AASTU'><Box className='route' sx={{background:'white',paddingLeft:"30px",py:'2rem'}}>
-        <Typography variant='h3' sx={{paddingLeft:"15px",mb:"2rem",fontWeight:'bold',textAlign:'center'}}>About AASTU</Typography>
+        <Typical
+        steps={['Welcome to Addis Ababa Science and Technology University', 'We are very happy to have you on board with us', 'Have you seen the University Life Section?','This Section is about AASTU']}
+        loop={Infinity}
+        wrapper="h3"
+      />
+        {/* <Typography variant='h3' sx={{paddingLeft:"15px",mb:"2rem",fontWeight:'bold',textAlign:'center'}}>About AASTU</Typography> */}
         <Waypoint onEnter={()=>{
           $('.aastu_text').addClass('animate__zoomIn');
           $('.about_image').addClass('animate__zoomIn');
