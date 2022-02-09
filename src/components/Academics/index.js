@@ -11,8 +11,8 @@ export default function Academics(){
     return (<section id='Academics'><Box className='route' sx={{background:'black',paddingLeft:"30px",py:'2rem'}}>
 
         <Typical
-        steps={['Courses We Offer are','There are also other courses too']}
-        loop={Infinity}
+        steps={['Courses We Offer are']}
+        loop={1}
         wrapper="h3"
       />
         <Typography sx={{textAlign:'center',fontWeight:'bold',mb:'2rem',}}>We have one of the most diverse courses in Ethiopia!</Typography>

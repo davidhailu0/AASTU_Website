@@ -12,7 +12,6 @@ import { styled, alpha,ThemeProvider,createTheme } from '@mui/material/styles';
 import {Link} from 'react-router-dom';
 import Drawer from '@mui/material/Drawer';
 import aastuLogo from '../../images/AASTU_LOGO.png'
-import ScrollSpy from 'react-scrollspy-navigation';
 import $ from 'jquery';
 import './AppBar.css';
 
@@ -113,21 +112,14 @@ const ResponsiveAppBar = () => {
     <AppBar position="fixed">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Box
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2}}
-            onClick={()=>{
-              $('html, body').animate({
-          scrollTop: $(`div[id="home"]`).offset().top - 50
+          <Link to={'/'} onClick={()=>{
+            $('html, body').animate({
+          scrollTop: $(`section[id="home"]`).offset().top - 50
      },1000);
-            }}
-          >
+          }}>
             <img src={aastuLogo} alt='aastu_logo'/>
-          </Box>
+          </Link>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            <ScrollSpy>
             {pages.map((page) => (
               <Button
                 key={page}
@@ -142,7 +134,6 @@ const ResponsiveAppBar = () => {
                 {page.replace('_',' ')}
               </Button>
             ))}
-            </ScrollSpy>
           </Box>
           <Box sx={{display:{xs:'none',md:'flex'}}}>
             <Search color='success'>
