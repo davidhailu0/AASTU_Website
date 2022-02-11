@@ -13,7 +13,7 @@ export default function ContactUs(){
     return (<section id='Contact_Us' className='Contact_Us'>
         <Typography sx={{textAlign:'center',fontWeight:'bold',mb:'2rem'}} variant='h2'>Contact Us</Typography>
          <Box sx={{display:{md:'flex',xs:'grid'},justifyContent:'space-evenly',px:'2rem'}}>
-        <Box sx={{alignSelf:'center',flexBasis:'30%'}} className='address animate__animated animate__delay-1s'>
+        <Box sx={{flexBasis:'30%'}} className='address animate__animated animate__delay-1s'>
         <Typography sx={{color:'black'}}><Tel sx={{pr:'1rem'}}/>Tel: +251 11 888 0610</Typography>
         <Typography sx={{color:'black'}}><Mobile sx={{pr:'1rem'}}/>Mob:+251 993 - 80 71 78</Typography>
         <Typography sx={{color:'black'}}><Mail sx={{pr:'1rem'}}/>E-mail: pir@aastu.edu.et</Typography>

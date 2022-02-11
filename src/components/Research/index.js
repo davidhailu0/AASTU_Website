@@ -3,24 +3,40 @@ import Box from '@mui/material/Box'
 import "animate.css/animate.min.css";
 import { Waypoint } from 'react-waypoint';
 import $ from 'jquery';
-import robot from '../../images/ar_intel2.jpg';
+import Lottie from 'react-lottie';
 import React from 'react';
+import researchAnime from '../../Animation/research.json'
 
-
-export default function AboutUs(){
-    return (<section id='Research'><Box className='route' sx={{background:'black',paddingLeft:"30px",py:'2rem'}}>
-        <Typography variant='h3' sx={{paddingLeft:"15px",color:'white',mb:'2rem',fontWeight:'bold',textAlign:'center',ml:{md:'20rem',xs:'0'}}}>Research</Typography>
+export default function Research(){
+  const defaultOptions = {
+      loop: true,
+      autoplay: true,
+      animationData: researchAnime,
+      rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice"
+      }
+    };
+    return (<section id='Research'><Box className='route' sx={{background:'white',paddingLeft:"30px",py:'2rem',position:'relative',pb:'100px'}}>
+        <Typography variant='h3' sx={{paddingLeft:"15px",color:'black',mb:'2rem',fontWeight:'bold',textAlign:'center'}}>Research in AASTU</Typography>
         <Box sx={{display:{xs:'grid',md:'flex'}}}>
-        <Box sx={{flexBasis:"48%"}} className='research_image animate__animated animate__delay-1s'>
-          <img src={robot} alt='robot' style={{width:"100%"}}/>
+          <Box sx={{flexBasis:'48%'}}>
+         <Lottie 
+	        options={defaultOptions}
+          height={400}
+          width={400}
+        />
         </Box>
-        <Box sx={{flexBasis:"48%"}} className='research_text animate__animated animate__delay-1s'>   
-    <Typography color={'white'}  sx={{paddingLeft:"15px",paddingTop:"15px",paddingRight:"30px",lineHeight:2,textAlign:'justify'}}>The Artificial Intelligence and Robotics is one of the centers of excellence which is identified by the ministry of science and technology to be established in Addis Ababa Science and Technology University.  The Artificial Intelligence & Robotics center of excellence (AI&R CoEs) is established with the aim to create a close collaboration between the academia and industries in the fields of Artificial intelligence and robotics.</Typography>
-    <Typography color={'white'}  sx={{paddingLeft:"15px",paddingTop:"15px",paddingRight:"30px",lineHeight:2,textAlign:'justify'}}>Addis Ababa Science and Technology University (hereafter AASTU) is one of the young and dynamic national universities that was established in 2011 to play a leading role in technological innovation and economic transformation of Ethiopia by undertaking problem solving and high-impact research projects. The main focus of research activities at the University is to boost the global competitiveness of local industries and business institutions. In GTP II, Ethiopia has paid a special attention to the development and application of ICTs, where academic and research institutions like AASTU are expected to play a key role.</Typography>
+        <Box sx={{flexBasis:"48%",display:'grid'}} className='research_text animate__animated animate__delay-1s'>
+        <div style={{height:'15rem',background:'black',paddingTop:'2rem',display:'inline-block',width:'38%',paddingRight:'110px',alignSelf:'center',position:'absolute'}} className='researchContent animate__animated animate__delay-2s'>
+    <Typography color={'white'}  sx={{paddingLeft:"35px",paddingBottom:'15px',paddingTop:"15px",paddingRight:"30px",lineHeight:2,textAlign:'justify'}}>The Artificial Intelligence and Robotics is one of the centers of excellence
+     which is identified by
+     the ministry of science and technology to be established in Addis Ababa Science and Technology University.</Typography>
+     </div>   
+     <div style={{height:"17rem",zIndex:'9',background:"#1067cc",width:'100px',display:'inline-block',textAlign:'center',alignSelf:'center',marginLeft:'85%'}} className='researchTitle animate__animated animate__delay-1s'><p style={{fontWeight:'bold',fontFamily:'roboto',paddingInline:'0.5rem',paddingTop:'7rem'}}>Research</p></div>
     </Box>
     <Waypoint onEnter={()=>{
-          $('.research_image').addClass('animate__slideInLeft');
-          $('.research_text').addClass('animate__slideInLeft');
+          $('.researchTitle').addClass('animate__slideInRight');
+          $('.researchContent').addClass('animate__slideInRight');
         }}/>
     </Box>
     </Box></section>);
