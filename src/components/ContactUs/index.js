@@ -10,7 +10,16 @@ import aastuMap from '../../images/aastu_map.png';
 import './ContactUs.css';
 export default function ContactUs(){
     const aastuMapUrl = 'https://www.google.com/maps/search/AASTU/@8.8863123,38.807744,884m/data=!3m2!1e3!4b1?hl=am';
-    return (<section id='Contact_Us' className='Contact_Us'>
+    return (<section id='Contact_Us' className='Contact_Us animate__slideInRight'>
+        <Waypoint onEnter={()=>{
+            $('.row1').addClass('animate__slideOutRight');
+            $('.row2').addClass('animate__slideOutRight');
+        }} onLeave={()=>{
+            $('.row1').removeClass('animate__slideOutRight');
+            $('.row2').removeClass('animate__slideOutRight');
+             $('.row1').addClass('animate__slideInRight');
+            $('.row2').addClass('animate__slideInRight');
+        }}/>
         <Typography sx={{textAlign:'center',fontWeight:'bold',mb:'2rem'}} variant='h2'>Contact Us</Typography>
          <Box sx={{display:{md:'flex',xs:'grid'},justifyContent:'space-evenly',px:'2rem'}}>
         <Box sx={{flexBasis:'30%'}} className='address animate__animated animate__delay-1s'>

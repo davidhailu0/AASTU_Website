@@ -9,12 +9,12 @@ export default function OurPartners(){
     return (<section id='Our_Partners' className='our_partners'>
         <Typography sx={{textAlign:'center',fontWeight:'bold',mb:'0.5rem'}} variant='h2'>Our Partners</Typography>
         <hr style={{width:'100px',marginBottom:'2rem',color:'#1067CC'}}/>
-        <Box sx={{display:{xs:'grid',md:'flex'},justifyContent:'space-evenly',alignItems:'center',rowGap:'2rem',mb:'3rem'}}>
+        <Box sx={{display:{xs:'grid',md:'flex'},justifyContent:'space-evenly',alignItems:'center',rowGap:'2rem',mb:'3rem'}} className='animate__animated row1'>
             <Box><img src={google} alt="google" /></Box>
             <Box><img src={apple} alt="apple" /></Box>
-            <Box><img src={johnson} alt="dell" /></Box>
+            <Box><img src={johnson} alt="dell"/></Box>
         </Box>
-        <Box sx={{display:{xs:'grid',md:'flex'},justifyContent:'space-evenly',alignItems:'center',rowGap:'2rem',}}>
+        <Box sx={{display:{xs:'grid',md:'flex'},justifyContent:'space-evenly',alignItems:'center',rowGap:'2rem',}} className='animate__animated row2'>
             <Box><img src={microsoft} alt="microsoft" /></Box>
             <Box><img src={tesla} alt="tesla" /></Box>
             <Box><img src={johnson} alt="pepsi" /></Box>
