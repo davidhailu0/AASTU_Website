@@ -6,6 +6,7 @@ import Location from '@mui/icons-material/MyLocation'
 import Button from '@mui/material/Button';
 import { Waypoint } from 'react-waypoint';
 import $ from 'jquery';
+import Wave from 'react-wavify'
 import aastuMap from '../../images/aastu_map.png';
 import './ContactUs.css';
 export default function ContactUs(){
@@ -20,6 +21,17 @@ export default function ContactUs(){
              $('.row1').addClass('animate__slideInRight');
             $('.row2').addClass('animate__slideInRight');
         }}/>
+       <Wave mask="url(#mask)" fill="#1277b0" >
+  <defs>
+    <linearGradient id="gradient" gradientTransform="rotate(90)">
+      <stop offset="0" stopColor="white" />
+      <stop offset="0.5" stopColor="black" />
+    </linearGradient>
+    <mask id="mask">
+      <rect x="0" y="0" width="2000" height="200" fill="url(#gradient)"  />
+    </mask>
+  </defs>
+</Wave>
         <Typography sx={{textAlign:'center',fontWeight:'bold',mb:'2rem'}} variant='h2'>Contact Us</Typography>
          <Box sx={{display:{md:'flex',xs:'grid'},justifyContent:'space-evenly',px:'2rem'}}>
         <Box sx={{flexBasis:'30%'}} className='address animate__animated animate__delay-1s'>

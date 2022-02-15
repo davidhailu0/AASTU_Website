@@ -1,8 +1,7 @@
 .Contact_Us{
-    height: 83vh;
+    height: 100vh;
     padding:2rem 1rem;
-    background-image: url('../../images/contactUs.jpg');
-    background-size: cover;
+    background:white;
     margin-bottom: 300px;
 }
 .form-container input,
